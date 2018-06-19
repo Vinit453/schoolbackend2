@@ -37,6 +37,7 @@ router.use('/states', require('./states/states'));
 router.use('/subcastes', require('./subcastes/subcastes'));
 router.use('/talukas', require('./talukas/talukas'));
 router.use('/permissions', require('./permissions/permissions'));
+router.use('/cashbooks', require('./cashbooks/cashbooks'));
 
 
 module.exports = router; 
