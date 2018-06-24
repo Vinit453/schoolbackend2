@@ -21,5 +21,18 @@ router.get('/', function (req, res, next) {
     })
 });
 
+// create new object
+router.post('/', function (req, res, next) {
+    cashbookService.addCashbook(req.body, function (err, results) {
+        if (err) {
+            res.json(err);
+        }
+        else {
+            res.json(results);
+        }
+
+    })
+});
+
 module.exports = router;
 
