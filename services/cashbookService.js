@@ -44,43 +44,11 @@ exports.getCashbookBankNames = function (queryString, callback) {
 }
 
 exports.getCashbookReport = function (cashbookReportReq, callback) {
-    var setString = "";
-    var keyString = "";
-    var valueString = "";
-    var filterQuery = "";
-    let cashbookReportReqObjectLeng = Object.keys(cashbookReportReq).length;
-    var i = 1;
-    for (var key in cashbookReportReq) {
-
-        if (cashbookReportReq[key] != null && cashbookReportReq[key] != ""){
-
-            switch (key) {
-                case 'name':
-                    filterQuery += 'name = ' + '\'' + cashbookReportReq[key] + '\'' + ' and ';
-                    break;
-            
-                case 'bankName':
-                    filterQuery += 'bankName = ' + '\'' +  cashbookReportReq[key] + '\'' +  ' and ';
-                    break;
-
-                case 'accountType':
-                    filterQuery += 'accountType = ' + '\'' + cashbookReportReq[key] + '\'' + ' and ';
-                    break;
-
-                case 'fromDate':
-                    filterQuery += 'creationDate between ' + '\'' + cashbookReportReq[key] + '\'' + ' and ';
-                    break;
-
-                case 'toDate':
-                    filterQuery += '\'' + cashbookReportReq[key] + '\'' ;
-                    break;
-                    
-                default:
-                    break;
-            }
-        }
-        i++;
-    }
+    var filterQuery = 'name = ' + '\'' + cashbookReportReq['name'] + '\'' + ' and '
+        + 'bankName = ' + '\'' + cashbookReportReq['bankName'] + '\'' + ' and  '
+        + 'accountType = ' + '\'' + cashbookReportReq['accountType'] + '\'' + ' and  '
+        + 'creationDate between ' + '\'' + cashbookReportReq['fromDate'] + '\'' + ' and '
+        + '\'' + cashbookReportReq['toDate'] + '\'';
 
     var sql = "Select * from tbl_cashbook where " + filterQuery;
 
