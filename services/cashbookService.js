@@ -44,6 +44,7 @@ exports.getCashbookBankNames = function (queryString, callback) {
 }
 
 exports.getCashbookReport = function (cashbookReportReq, callback) {
+
     var filterQuery = 'name = ' + '\'' + cashbookReportReq['name'] + '\'' + ' and '
         + 'bankName = ' + '\'' + cashbookReportReq['bankName'] + '\'' + ' and  '
         + 'accountType = ' + '\'' + cashbookReportReq['accountType'] + '\'' + ' and  '
