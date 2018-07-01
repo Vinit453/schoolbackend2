@@ -39,8 +39,9 @@ router.use('/talukas', require('./talukas/talukas'));
 router.use('/permissions', require('./permissions/permissions'));
 router.use('/cashbooks', require('./cashbooks/cashbooks'));
 router.use('/fee', require('./fee/fee'));
-router.use('/installmentType',  require('./installmentType/installmentType'))
-router.use('/feeType',  require('./feeType/feeType'))
+router.use('/installmentType',  require('./installmentType/installmentType'));
+router.use('/feeType',  require('./feeType/feeType'));
+router.use('/bankDetails',  require('./bankDetails/bankDetails'));
 
 
 module.exports = router; 
