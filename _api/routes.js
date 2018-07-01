@@ -38,6 +38,9 @@ router.use('/subcastes', require('./subcastes/subcastes'));
 router.use('/talukas', require('./talukas/talukas'));
 router.use('/permissions', require('./permissions/permissions'));
 router.use('/cashbooks', require('./cashbooks/cashbooks'));
+router.use('/fee', require('./fee/fee'));
+router.use('/installmentType',  require('./installmentType/installmentType'))
+router.use('/feeType',  require('./feeType/feeType'))
 
 
 module.exports = router; 
