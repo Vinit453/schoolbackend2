@@ -44,11 +44,12 @@ exports.getCashbookBankNames = function (queryString, callback) {
 }
 
 exports.getCashbookReport = function (cashbookReportReq, callback) {
-    var filterQuery = 'name is null or name = '+'\'' + cashbookReportReq['name'] + '\'' + ' and ' 
-                    + 'bankName is null or bankName = ' + '\'' + cashbookReportReq['bankName'] + '\'' + ' and  ' 
-                    + 'accountType is null or accountType = ' + '\'' + cashbookReportReq['accountType'] + '\''+' and  ' 
-                    + 'creationDate between ' + '\'' + cashbookReportReq['fromDate'] + '\''+' and ' 
-                    + '\'' + cashbookReportReq['toDate'] + '\'';
+
+    var filterQuery = 'name = ' + '\'' + cashbookReportReq['name'] + '\'' + ' and '
+        + 'bankName = ' + '\'' + cashbookReportReq['bankName'] + '\'' + ' and  '
+        + 'accountType = ' + '\'' + cashbookReportReq['accountType'] + '\'' + ' and  '
+        + 'creationDate between ' + '\'' + cashbookReportReq['fromDate'] + '\'' + ' and '
+        + '\'' + cashbookReportReq['toDate'] + '\'';
 
     var sql = "Select * from tbl_cashbook where " + filterQuery;
 
