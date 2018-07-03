@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var HTTP_PORT = 80;
 var HTTPS_PORT = 443;
@@ -13,6 +14,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 // logger.info(JSON.stringify(process.env, null, 2))
+
+app.use(cors());
 
 // route requests by URI root 
 app.use('/api', require('./_api/routes'));
